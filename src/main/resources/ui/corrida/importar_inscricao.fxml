@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="592.0" prefWidth="1231.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <TitledPane animated="false" collapsible="false" focusTraversable="false" layoutX="300.0" layoutY="29.0" prefHeight="152.0" prefWidth="536.0" text="Prova">
+            <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="136.0" prefWidth="534.0">
+                    <children>
+                        <Label layoutX="14.0" layoutY="14.0" text="Nome *" />
+                        <TextField fx:id="txtNomeProva" layoutX="14.0" layoutY="31.0" prefHeight="25.0" prefWidth="313.0" />
+                        <Button fx:id="btnPesquisarProva" focusTraversable="false" layoutX="325.0" layoutY="31.0" mnemonicParsing="false" onAction="#pesquisarProva" prefHeight="25.0" prefWidth="25.0" />
+                        <Label layoutX="366.0" layoutY="14.0" text="Situação" />
+                        <TextField fx:id="txtSituacao" editable="false" focusTraversable="false" layoutX="366.0" layoutY="31.0" prefHeight="25.0" prefWidth="150.0" />
+                        <Label layoutX="14.0" layoutY="62.0" text="Data" />
+                        <TextField fx:id="txtData" editable="false" focusTraversable="false" layoutX="14.0" layoutY="79.0" prefHeight="25.0" prefWidth="100.0" />
+                  
+                        <Label layoutX="130.0" layoutY="62.0" text="Cidade" />
+                        <TextField fx:id="txtCidade" editable="false" focusTraversable="false" layoutX="130.0" layoutY="79.0" prefHeight="25.0" prefWidth="220.0" />
+                        <Label layoutX="367.0" layoutY="62.0" text="Estado" />
+                        <TextField fx:id="txtUf" editable="false" focusTraversable="false" layoutX="367.0" layoutY="79.0" prefHeight="25.0" prefWidth="150.0" />
+                    </children>
+                </AnchorPane>
+            </content>
+        </TitledPane>
+        <TitledPane animated="false" collapsible="false" focusTraversable="false" layoutX="858.0" layoutY="29.0" prefHeight="152.0" prefWidth="353.0" text="Arquivo Excel">
+            <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="164.0" prefWidth="656.0">
+                    <children>
+                        <Label layoutX="15.0" layoutY="14.0" text="Arquivo *" />
+                        <TextField fx:id="txtPathArquivo" editable="false" focusTraversable="false" layoutX="14.0" layoutY="31.0" prefHeight="25.0" prefWidth="324.0" />
+                        <Button layoutX="237.0" layoutY="87.0" mnemonicParsing="false" onAction="#abrirArquivo" prefWidth="100.0" text="abrir" />
+                    </children>
+                </AnchorPane>
+            </content>
+        </TitledPane>
+        <Label layoutX="31.0" layoutY="28.0" prefHeight="17.0" prefWidth="124.0" text="Linhas de cabeçalho" />
+        <TextField fx:id="txtLinhaCabecalho" layoutX="31.0" layoutY="45.0" prefHeight="25.0" prefWidth="90.0" />
+      <Button layoutX="176.0" layoutY="45.0" mnemonicParsing="false" onAction="#verificarTipoColunas" prefWidth="100.0" text="verificar tipo" />
+        <TitledPane fx:id="titledPaneCrono" animated="false" collapsible="false" focusTraversable="false" layoutX="31.0" layoutY="80.0" prefHeight="496.0" prefWidth="245.0" text="Colunas">
+            <content>
+                <ScrollPane fx:id="scrollPane" hbarPolicy="NEVER" prefHeight="504.0" prefWidth="243.0">
+                    <content>
+                        <AnchorPane fx:id="paneColuna" minHeight="0.0" minWidth="0.0" prefHeight="1200.0" prefWidth="243.0">
+                            <children>
+                                <Label alignment="CENTER_RIGHT" layoutX="15.0" layoutY="18.0" prefHeight="17.0" prefWidth="90.0" text="Num. do atleta" />
+                                <TextField fx:id="txtNumeroAtleta" layoutX="119.0" layoutY="15.0" prefHeight="25.0" prefWidth="30.0" />
+                                <Label alignment="CENTER_RIGHT" layoutX="15.0" layoutY="53.0" prefWidth="90.0" text="Categoria *" />
+                                <TextField fx:id="txtCategoria" layoutX="119.0" layoutY="50.0" prefHeight="25.0" prefWidth="30.0" />
+                        <Button fx:id="btnCorrespondenciaCategoria" focusTraversable="false" layoutX="163.0" layoutY="47.0" mnemonicParsing="false" onAction="#associarCategorias" prefHeight="30.0" prefWidth="30.0" />
+                                <Label alignment="CENTER_RIGHT" layoutX="15.0" layoutY="88.0" prefHeight="17.0" prefWidth="90.0" text="Nome atleta *" />
+                                <TextField fx:id="txtNomeAtleta" layoutX="119.0" layoutY="85.0" prefHeight="25.0" prefWidth="30.0" />
+                                <Label alignment="CENTER_RIGHT" layoutX="15.0" layoutY="123.0" prefHeight="17.0" prefWidth="90.0" text="Código federado" />
+                                <TextField fx:id="txtCodigoFederacao" layoutX="119.0" layoutY="120.0" prefHeight="25.0" prefWidth="30.0" />
+                                <Label alignment="CENTER_RIGHT" layoutX="15.0" layoutY="158.0" prefHeight="17.0" prefWidth="90.0" text="Código CBC" />
+                                <TextField fx:id="txtCodigoCbc" layoutX="119.0" layoutY="155.0" prefHeight="25.0" prefWidth="30.0" />
+                                <Label alignment="CENTER_RIGHT" layoutX="15.0" layoutY="193.0" prefHeight="17.0" prefWidth="90.0" text="Código UCI" />
+                                <TextField fx:id="txtCodigoUci" layoutX="119.0" layoutY="190.0" prefHeight="25.0" prefWidth="30.0" />
+                                <Label alignment="CENTER_RIGHT" layoutX="15.0" layoutY="228.0" prefHeight="17.0" prefWidth="90.0" text="Sexo *" />
+                                <TextField fx:id="txtSexo" layoutX="119.0" layoutY="225.0" prefHeight="25.0" prefWidth="30.0" />
+                                <Label alignment="CENTER_RIGHT" layoutX="15.0" layoutY="263.0" prefHeight="17.0" prefWidth="90.0" text="Dt. Nasc. *" />
+                                <TextField fx:id="txtDataNascimentoAtleta" layoutX="119.0" layoutY="260.0" prefHeight="25.0" prefWidth="30.0" />
+                        <TextField fx:id="txtDtNascAtletaPattern" layoutX="151.0" layoutY="260.0" prefHeight="25.0" prefWidth="75.0" promptText="dd/mm/aaaa">
+                           <padding>
+                              <Insets left="1.0" right="1.0" />
+                           </padding>
+                        </TextField>
+                                <Label alignment="CENTER_RIGHT" layoutX="15.0" layoutY="298.0" prefHeight="17.0" prefWidth="90.0" text="RG do atleta" />
+                                <TextField fx:id="txtRgAtleta" layoutX="119.0" layoutY="295.0" prefHeight="25.0" prefWidth="30.0" />
+                                <Label alignment="CENTER_RIGHT" layoutX="15.0" layoutY="333.0" prefHeight="17.0" prefWidth="90.0" text="Data RG" />
+                                <TextField fx:id="txtDataRg" layoutX="119.0" layoutY="330.0" prefHeight="25.0" prefWidth="30.0" />
+                        <TextField fx:id="txtDtRgPattern" layoutX="151.0" layoutY="329.0" prefHeight="25.0" prefWidth="75.0" promptText="dd/mm/aaaa">
+                           <padding>
+                              <Insets left="1.0" right="1.0" />
+                           </padding>
+                        </TextField>
+                                <Label alignment="CENTER_RIGHT" layoutX="15.0" layoutY="368.0" prefHeight="17.0" prefWidth="90.0" text="Órgão exp. RG" />
+                                <TextField fx:id="txtOrgaoRg" layoutX="119.0" layoutY="365.0" prefHeight="25.0" prefWidth="30.0" />
+                                <Label alignment="CENTER_RIGHT" layoutX="15.0" layoutY="403.0" prefWidth="90.0" text="CPF" />
+                                <TextField fx:id="txtCpf" layoutX="119.0" layoutY="400.0" prefHeight="25.0" prefWidth="30.0" />
+                                <Label alignment="CENTER_RIGHT" layoutX="15.0" layoutY="438.0" prefHeight="17.0" prefWidth="90.0" text="Logradouro" />
+                                <TextField fx:id="txtLogradouro" layoutX="119.0" layoutY="435.0" prefHeight="25.0" prefWidth="30.0" />
+                                <Label alignment="CENTER_RIGHT" layoutX="14.0" layoutY="474.0" prefHeight="17.0" prefWidth="90.0" text="Número" />
+                                <TextField fx:id="txtNumero" layoutX="119.0" layoutY="470.0" prefHeight="25.0" prefWidth="30.0" />
+                                <Label alignment="CENTER_RIGHT" layoutX="15.0" layoutY="508.0" prefHeight="17.0" prefWidth="90.0" text="Complemento" />
+                                <TextField fx:id="txtComplemento" layoutX="119.0" layoutY="505.0" prefHeight="25.0" prefWidth="30.0" />
+                                <Label alignment="CENTER_RIGHT" layoutX="15.0" layoutY="543.0" prefHeight="17.0" prefWidth="90.0" text="Bairro" />
+                                <TextField fx:id="txtBairroAtleta" layoutX="119.0" layoutY="540.0" prefHeight="25.0" prefWidth="30.0" />
+                                <Label alignment="CENTER_RIGHT" layoutX="15.0" layoutY="578.0" prefHeight="17.0" prefWidth="90.0" text="Cidade *" />
+                                <TextField fx:id="txtCidadeAtleta" layoutX="119.0" layoutY="575.0" prefHeight="25.0" prefWidth="30.0" />
+                                <Label alignment="CENTER_RIGHT" layoutX="15.0" layoutY="613.0" prefHeight="17.0" prefWidth="90.0" text="UF *" />
+                                <TextField fx:id="txtUfAtleta" layoutX="119.0" layoutY="610.0" prefHeight="25.0" prefWidth="30.0" />
+                                <Label alignment="CENTER_RIGHT" layoutX="15.0" layoutY="648.0" prefHeight="17.0" prefWidth="90.0" text="CEP" />
+                                <TextField fx:id="txtCep" layoutX="119.0" layoutY="645.0" prefHeight="25.0" prefWidth="30.0" />
+                                <Label alignment="CENTER_RIGHT" layoutX="15.0" layoutY="683.0" prefHeight="17.0" prefWidth="90.0" text="Telefone 1" />
+                                <TextField fx:id="txtTelefone1" layoutX="119.0" layoutY="680.0" prefHeight="25.0" prefWidth="30.0" />
+                                <Label alignment="CENTER_RIGHT" layoutX="15.0" layoutY="718.0" prefHeight="17.0" prefWidth="90.0" text="Telefone 2" />
+                                <TextField fx:id="txtTelefone2" layoutX="119.0" layoutY="715.0" prefHeight="25.0" prefWidth="30.0" />
+                                <Label alignment="CENTER_RIGHT" layoutX="15.0" layoutY="753.0" prefWidth="90.0" text="Email" />
+                                <TextField fx:id="txtEmail" layoutX="119.0" layoutY="750.0" prefHeight="25.0" prefWidth="30.0" />
+                                <Label alignment="CENTER_RIGHT" layoutX="15.0" layoutY="788.0" prefHeight="17.0" prefWidth="90.0" text="Equipe" />
+                                <TextField fx:id="txtEquipe" layoutX="119.0" layoutY="785.0" prefHeight="25.0" prefWidth="30.0" />
+                                <Label alignment="CENTER_RIGHT" layoutX="15.0" layoutY="823.0" prefHeight="17.0" prefWidth="90.0" text="Equipamento" />
+                                <TextField fx:id="txtEquipamento" layoutX="119.0" layoutY="820.0" prefHeight="25.0" prefWidth="30.0" />
+                                <Label alignment="CENTER_RIGHT" layoutX="15.0" layoutY="858.0" prefHeight="17.0" prefWidth="90.0" text="Profissão" />
+                                <TextField fx:id="txtProfissao" layoutX="119.0" layoutY="855.0" prefHeight="25.0" prefWidth="30.0" />
+                                <Label alignment="CENTER_RIGHT" layoutX="15.0" layoutY="893.0" prefHeight="17.0" prefWidth="90.0" text="Tipo sanguíneo" />
+                                <TextField fx:id="txtTipoSanguineo" layoutX="119.0" layoutY="890.0" prefHeight="25.0" prefWidth="30.0" />
+                                <Label alignment="CENTER_RIGHT" layoutX="15.0" layoutY="928.0" prefHeight="17.0" prefWidth="90.0" text="Contato urg." />
+                                <TextField fx:id="txtNomeContatoUrgencia" layoutX="119.0" layoutY="925.0" prefHeight="25.0" prefWidth="30.0" />
+                                <Label alignment="CENTER_RIGHT" layoutX="5.0" layoutY="963.0" prefHeight="17.0" prefWidth="100.0" text="Parentesco urg." />
+                                <TextField fx:id="txtParentesco" layoutX="119.0" layoutY="960.0" prefHeight="25.0" prefWidth="30.0" />
+                                <Label alignment="CENTER_RIGHT" layoutX="15.0" layoutY="998.0" prefHeight="17.0" prefWidth="90.0" text="Urg. fone 1" />
+                                <TextField fx:id="txtTelefone1ContUrg" layoutX="119.0" layoutY="995.0" prefHeight="25.0" prefWidth="30.0" />
+                                <Label alignment="CENTER_RIGHT" layoutX="19.0" layoutY="1033.0" prefHeight="17.0" prefWidth="90.0" text="Urg. fone 2" />
+                                <TextField fx:id="txtTelefone2ContUrg" layoutX="119.0" layoutY="1030.0" prefHeight="25.0" prefWidth="30.0" />
+                                <Label alignment="CENTER_RIGHT" layoutX="15.0" layoutY="1068.0" prefHeight="17.0" prefWidth="90.0" text="Data Inscrição" />
+                                <TextField fx:id="txtDataInscricao" layoutX="119.0" layoutY="1065.0" prefHeight="25.0" prefWidth="30.0" />
+                        <TextField fx:id="txtDtInscricaoPattern" layoutX="151.0" layoutY="1065.0" prefHeight="25.0" prefWidth="75.0" promptText="dd/mm/aaaa">
+                           <padding>
+                              <Insets left="1.0" right="1.0" />
+                           </padding>
+                        </TextField>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </ScrollPane>
+            </content>
+        </TitledPane>
+        <TitledPane animated="false" collapsible="false" focusTraversable="false" layoutX="300.0" layoutY="203.0" prefHeight="327.0" prefWidth="911.0" text="Planilha">
+            <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                    <children>
+                        <TableView fx:id="tabXls" focusTraversable="false" layoutX="15.0" layoutY="15.0" prefHeight="277.0" prefWidth="880.0" />
+                    </children>
+                </AnchorPane>
+            </content>
+        </TitledPane>
+        <Button layoutX="656.0" layoutY="551.0" mnemonicParsing="false" onAction="#importar" prefWidth="100.0" text="importar" />
+      <ProgressIndicator fx:id="indicadorProgresso" focusTraversable="false" layoutX="578.0" layoutY="258.0" prefHeight="75.0" prefWidth="75.0" />
+    </children>
+</AnchorPane>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="681.0" prefWidth="780.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TitledPane animated="false" collapsible="false" focusTraversable="false" layoutX="15.0" layoutY="15.0" prefHeight="105.0" prefWidth="750.0" text="Informações da prova">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="112.0" prefWidth="710.0">
+               <children>
+                  <Label layoutX="15.0" layoutY="15.0" text="Prova" />
+                  <TextField fx:id="txtNomeProva" editable="false" focusTraversable="false" layoutX="15.0" layoutY="32.0" prefHeight="25.0" prefWidth="289.0" />
+                  <Label layoutX="343.0" layoutY="15.0" text="Data" />
+                  <TextField fx:id="txtDataProva" editable="false" focusTraversable="false" layoutX="343.0" layoutY="32.0" prefHeight="25.0" prefWidth="80.0" />
+                  <Label layoutX="457.0" layoutY="15.0" text="Situação" />
+                  <TextField fx:id="txtSituacaoProva" editable="false" focusTraversable="false" layoutX="457.0" layoutY="32.0" prefHeight="25.0" prefWidth="280.0" />
+               </children>
+            </AnchorPane>
+        </content>
+      </TitledPane>
+      <TableView fx:id="tabCategoria" editable="true" focusTraversable="false" layoutX="15.0" layoutY="141.0" prefHeight="479.0" prefWidth="750.0">
+         <columns>
+            <TableColumn fx:id="colCheckBox" prefWidth="40.0" resizable="false" sortable="false" />
+            <TableColumn fx:id="colCategoria" editable="false" prefWidth="220.0" sortable="false" text="Categoria" />
+            <TableColumn fx:id="colInscritos" editable="false" prefWidth="110.0" sortable="false" text="Inscritos" />
+            <TableColumn fx:id="colSemNumeracao" editable="false" prefWidth="110.0" sortable="false" text="Sem númeração" />
+            <TableColumn fx:id="colDigito" prefWidth="75.0" sortable="false" text="Dígitos" />
+            <TableColumn fx:id="colFaixaInicio" prefWidth="70.0" sortable="false" text="Início" />
+            <TableColumn fx:id="colFaixaFim" prefWidth="70.0" sortable="false" text="Fim" />
+            <TableColumn fx:id="colNumManual" prefWidth="40.0" resizable="false" sortable="false" />
+         </columns>
+      </TableView>
+      <Button fx:id="btnNumAutomatica" layoutX="304.0" layoutY="637.0" mnemonicParsing="false" onAction="#realizarNumeracaoAutomatica" text="numeração automática" />
+      <CheckBox fx:id="checkSubstituirNumeracao" layoutX="478.0" layoutY="641.0" mnemonicParsing="false" text="Substituir a numeração existente" />
+   </children>
+</AnchorPane>

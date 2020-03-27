@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Pagination?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="652.0" prefWidth="1178.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TitledPane animated="false" collapsible="false" focusTraversable="false" layoutX="15.0" layoutY="22.0" prefHeight="82.0" prefWidth="295.0" text="Prova">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="79.0" prefWidth="293.0">
+               <children>
+                  <TextField fx:id="txtNomeProva" focusTraversable="false" layoutX="22.0" layoutY="15.0" prefHeight="25.0" prefWidth="258.0" />
+               </children>
+            </AnchorPane>
+        </content>
+      </TitledPane>
+      <TitledPane animated="false" collapsible="false" focusTraversable="false" layoutX="15.0" layoutY="240.0" prefHeight="118.0" prefWidth="295.0" text="Percurso">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="99.0" prefWidth="293.0">
+               <children>
+                  <ComboBox fx:id="comboPercurso" layoutX="15.0" layoutY="15.0" prefHeight="25.0" prefWidth="224.0" />
+                  <Button fx:id="btnPesquisarPercurso" focusTraversable="false" layoutX="245.0" layoutY="15.0" minHeight="25.0" mnemonicParsing="false" onAction="#filtrarPercurso" prefWidth="25.0" />
+                  <RadioButton fx:id="radioSexoTodos" layoutX="17.0" layoutY="59.0" mnemonicParsing="false" text="Todos">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="sexo" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="radioMasculino" layoutX="102.0" layoutY="59.0" mnemonicParsing="false" text="Masculino" toggleGroup="$sexo" />
+                  <RadioButton fx:id="radioFeminino" layoutX="204.0" layoutY="59.0" mnemonicParsing="false" text="Feminino" toggleGroup="$sexo" />
+               </children>
+            </AnchorPane>
+        </content>
+      </TitledPane>
+      <TitledPane animated="false" collapsible="false" focusTraversable="false" layoutX="15.0" layoutY="375.0" prefHeight="82.0" prefWidth="295.0" text="Categoria">
+         <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="50.0" prefWidth="264.0">
+               <children>
+                  <ComboBox fx:id="comboCategoria" layoutX="15.0" layoutY="15.0" prefHeight="25.0" prefWidth="224.0" />
+                  <Button fx:id="btnPesquisarCategoria" focusTraversable="false" layoutX="245.0" layoutY="15.0" mnemonicParsing="false" onAction="#filtrarCategoria" prefWidth="25.0" />
+               </children>
+            </AnchorPane>
+         </content>
+      </TitledPane>
+      <TitledPane animated="false" collapsible="false" focusTraversable="false" layoutX="15.0" layoutY="475.0" prefHeight="143.0" prefWidth="295.0" text="Outros">
+         <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="50.0" prefWidth="264.0">
+               <children>
+                  <Label layoutX="15.0" layoutY="19.0" text="Número do atleta:" />
+                  <TextField fx:id="txtNumeroAtleta" layoutX="125.0" layoutY="15.0" prefHeight="25.0" prefWidth="89.0" />
+                  <Button fx:id="btnPesquisarOutro" focusTraversable="false" layoutX="246.0" layoutY="15.0" mnemonicParsing="false" onAction="#filtrarOutro" prefWidth="25.0" />
+                  <Label layoutX="15.0" layoutY="51.0" text="Período da cronometragem" />
+                  <Label layoutX="15.0" layoutY="74.0" text="a partir de" />
+                  <TextField fx:id="txtHoraInicio" layoutX="82.0" layoutY="72.0" prefHeight="25.0" prefWidth="70.0" promptText="hora inic." />
+                  <Label layoutX="167.0" layoutY="74.0" text="até" />
+                  <TextField fx:id="txtHoraFim" layoutX="201.0" layoutY="72.0" prefHeight="25.0" prefWidth="70.0" promptText="hora final" />
+               </children>
+            </AnchorPane>
+         </content>
+      </TitledPane>
+      <Pagination fx:id="paginacao" layoutX="327.0" layoutY="22.0" prefHeight="640.0" prefWidth="831.0" />
+      <TableView fx:id="tabCrono" focusTraversable="false" layoutX="327.0" layoutY="22.0" prefHeight="595.0" prefWidth="831.0">
+        <columns>
+          <TableColumn fx:id="colNumero" prefWidth="75.0" text="Número" />
+          <TableColumn fx:id="colAtleta" prefWidth="200.0" text="Atleta" />
+            <TableColumn fx:id="colCategoria" prefWidth="202.0" text="Categoria" />
+            <TableColumn fx:id="colHora" prefWidth="160.0" text="Hora" />
+            <TableColumn fx:id="colTempo" prefWidth="90.0" text="Tempo" />
+            <TableColumn fx:id="colVolta" prefWidth="50.0" text="Volta" />
+            <TableColumn fx:id="colStatus" prefWidth="40.0" text="S" />
+        </columns>
+      </TableView>
+      <TitledPane animated="false" collapsible="false" focusTraversable="false" layoutX="15.0" layoutY="120.0" prefHeight="104.0" prefWidth="295.0" text="Situação">
+         <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="76.0" prefWidth="293.0">
+               <children>
+                  <RadioButton fx:id="radioStatusTodas" layoutX="36.0" layoutY="15.0" mnemonicParsing="false" text="Todos">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="status" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="radioStatusAtiva" layoutX="167.0" layoutY="15.0" mnemonicParsing="false" text="Ativas" toggleGroup="$status" />
+                  <RadioButton fx:id="radioStatusExcluida" layoutX="36.0" layoutY="45.0" mnemonicParsing="false" text="Excluídas" toggleGroup="$status" />
+                  <RadioButton fx:id="radioStatusDuvida" layoutX="167.0" layoutY="45.0" mnemonicParsing="false" text="Em dúvida" toggleGroup="$status" />
+               </children>
+            </AnchorPane>
+         </content>
+      </TitledPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox prefHeight="627.0" prefWidth="997.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <MenuBar>
+            <menus>
+                <Menu mnemonicParsing="false" text="Inscrição">
+                    <items>
+                        <MenuItem fx:id="mnuFinalizarInscricao" mnemonicParsing="false" onAction="#finalizarInscricao" text="Finalizar inscrições" />
+                        <MenuItem fx:id="mnuReabrirInscricao" mnemonicParsing="false" onAction="#reabrirInscricao" text="Reabrir inscrições" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem fx:id="mnuVerificarPendencia" mnemonicParsing="false" onAction="#abrirPendenciaInscricao" text="Solucionar pendências de inscrições..." />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem fx:id="mnuImportacao" mnemonicParsing="false" onAction="#abrirCadastroImportacao" text="Importações..." />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Cronometragem">
+                    <items>
+                        <MenuItem fx:id="mnuCronoVerificarPendencia" mnemonicParsing="false" onAction="#verificarPendenciaCronometragem" text="Verificar inconsistências" />
+                        <MenuItem fx:id="mnuReabrirCrono" mnemonicParsing="false" onAction="#reabrirCronometragem" text="Reabrir cronometragem" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Apuração">
+                    <items>
+                        <MenuItem fx:id="mnuVerTodasCrono" mnemonicParsing="false" onAction="#abrirTodasCrono" text="Ver todas cronometragens..." />
+                        <MenuItem fx:id="mnuDesclassificarAtleta" mnemonicParsing="false" onAction="#abrirSituacaoAtleta" text="Situação do atleta..." />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem fx:id="mnuFinalizarApuracao" mnemonicParsing="false" onAction="#finalizarApuracao" text="Finalizar apuração" />
+                        <MenuItem fx:id="mnuReabrirApuracao" mnemonicParsing="false" onAction="#reabrirApuracao" text="Reabrir apuração" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem fx:id="mnuFinalizarProva" mnemonicParsing="false" onAction="#finalizarProva" text="Finalizar prova" />
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+        <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity">
+            <children>
+                <TitledPane animated="false" collapsible="false" focusTraversable="false" layoutX="380.0" layoutY="15.0" prefHeight="103.0" prefWidth="600.0" text="Prova">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <Label layoutX="15.0" layoutY="15.0" text="Nome" />
+                                <TextField fx:id="txtNome" editable="false" focusTraversable="false" layoutX="15.0" layoutY="32.0" prefHeight="25.0" prefWidth="235.0" />
+                                <Label layoutX="255.0" layoutY="15.0" text="Data" />
+                                <TextField fx:id="txtData" editable="false" focusTraversable="false" layoutX="255.0" layoutY="32.0" prefHeight="25.0" prefWidth="80.0" />
+                                <Label layoutX="340.0" layoutY="15.0" text="Situação" />
+                                <TextField fx:id="txtSituacao" editable="false" focusTraversable="false" layoutX="340.0" layoutY="32.0" prefHeight="25.0" prefWidth="192.0" />
+                                <Label layoutX="536.0" layoutY="15.0" text="Inscritos" />
+                                <TextField fx:id="txtTotalInscritos" editable="false" focusTraversable="false" layoutX="536.0" layoutY="32.0" prefHeight="25.0" prefWidth="46.0" />
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </TitledPane>
+                <TitledPane animated="false" collapsible="false" focusTraversable="false" layoutX="380.0" layoutY="135.0" prefHeight="135.0" prefWidth="600.0" text="Represenantes">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="116.0" prefWidth="563.0">
+                            <children>
+                                <TableView fx:id="tabOrganizacao" focusTraversable="false" layoutX="15.0" layoutY="15.0" prefHeight="85.0" prefWidth="277.0">
+                                    <columns>
+                                        <TableColumn fx:id="colOrganizacao" prefWidth="127.0" text="Organização" />
+                                        <TableColumn fx:id="colRepOrganizacao" prefWidth="135.0" text="Representante" />
+                                    </columns>
+                                </TableView>
+                                <TableView fx:id="tabFederacao" focusTraversable="false" layoutX="308.0" layoutY="15.0" prefHeight="85.0" prefWidth="277.0">
+                                    <columns>
+                                        <TableColumn fx:id="colFederacao" prefWidth="127.0" text="Federalção" />
+                                        <TableColumn fx:id="colRepFederacao" prefWidth="135.0" text="Representante" />
+                                    </columns>
+                                </TableView>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </TitledPane>
+                <TitledPane animated="false" collapsible="false" focusTraversable="false" layoutX="380.0" layoutY="287.0" prefHeight="293.0" prefWidth="600.0" text="Categorias">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="263.0" prefWidth="598.0">
+                            <children>
+                                <TableView fx:id="tabCategoria" focusTraversable="false" layoutX="15.0" layoutY="15.0" prefHeight="241.0" prefWidth="570.0">
+                                    <columns>
+                                        <TableColumn fx:id="colNomeCategoria" prefWidth="235.0" text="Categoria" />
+                                        <TableColumn fx:id="colDescricaoCategoria" prefWidth="250.0" text="Descrição" />
+                                        <TableColumn fx:id="colInscritos" prefWidth="70.0" text="Inscritos" />
+                                    </columns>
+                                </TableView>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </TitledPane>
+                <TitledPane animated="false" collapsible="false" layoutX="15.0" layoutY="287.0" prefHeight="293.0" prefWidth="350.0" text="Relatórios">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="267.0" prefWidth="0.0">
+                            <children>
+                                <TabPane layoutX="5.0" layoutY="5.0" prefHeight="256.0" prefWidth="337.0" tabClosingPolicy="UNAVAILABLE">
+                                    <tabs>
+                                        <Tab text="Inscritos">
+                                            <content>
+                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                    <children>
+                                                        <RadioButton fx:id="radioRelInscTodos" layoutX="15.0" layoutY="106.0" mnemonicParsing="false" selected="true" text="Todos">
+                                                            <toggleGroup>
+                                                                <ToggleGroup fx:id="relInscFiltroNumero" />
+                                                            </toggleGroup>
+                                                        </RadioButton>
+                                                        <RadioButton fx:id="radioRelInscNumero" layoutX="94.0" layoutY="106.0" mnemonicParsing="false" text="Numerados" toggleGroup="$relInscFiltroNumero" />
+                                                        <RadioButton fx:id="radioRelInscSemNumero" layoutX="203.0" layoutY="106.0" mnemonicParsing="false" text="Sem numeração" toggleGroup="$relInscFiltroNumero" />
+                                                        <RadioButton fx:id="radioRelInscOrdemNumero" layoutX="15.0" layoutY="167.0" mnemonicParsing="false" selected="true" text="Número do atleta">
+                                                            <toggleGroup>
+                                                                <ToggleGroup fx:id="relInscOrdenacao" />
+                                                            </toggleGroup>
+                                                        </RadioButton>
+                                                        <RadioButton fx:id="radioRelInscOrdemNome" layoutX="158.0" layoutY="167.0" mnemonicParsing="false" text="Nome do atleta" toggleGroup="$relInscOrdenacao" />
+                                                        <ComboBox fx:id="comboTipoRelInscrito" layoutX="15.0" layoutY="36.0" prefHeight="25.0" prefWidth="195.0" />
+                                                        <Label layoutX="15.0" layoutY="19.0" text="Tipo" />
+                                                        <Label layoutX="15.0" layoutY="83.0" text="Filtro numeração" />
+                                                        <Label layoutX="15.0" layoutY="144.0" text="Ordenação" />
+                                                        <Button fx:id="btnRelInscrito" layoutX="297.0" layoutY="36.0" mnemonicParsing="false" onAction="#criarRelInscritos" prefHeight="25.0" prefWidth="25.0" />
+                                                    </children>
+                                                </AnchorPane>
+                                            </content>
+                                        </Tab>
+                                        <Tab fx:id="tabRelClassificacao" text="Classificação">
+                                            <content>
+                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                    <children>
+                                                        <Label layoutX="15.0" layoutY="19.0" text="Percurso" />
+                                                        <ComboBox fx:id="comboRelClassificacaoPercurso" layoutX="15.0" layoutY="36.0" prefHeight="25.0" prefWidth="259.0" />
+                                                        <RadioButton fx:id="radioRelMasculino" layoutX="15.0" layoutY="67.0" mnemonicParsing="false" selected="true" text="Masculino">
+                                                            <toggleGroup>
+                                                                <ToggleGroup fx:id="sexo" />
+                                                            </toggleGroup>
+                                                        </RadioButton>
+                                                        <RadioButton fx:id="radioRelFeminino" layoutX="117.0" layoutY="67.0" mnemonicParsing="false" text="Feminino" toggleGroup="$sexo" />
+                                                        <Button fx:id="btnRelClassificacaoGeral" focusTraversable="false" layoutX="297.0" layoutY="36.0" minHeight="25.0" mnemonicParsing="false" onAction="#criarRelClassificacaoGeral" prefWidth="25.0" />
+               
+                                                        
+                                                        <ComboBox fx:id="comboRelClassificacaoCategoria" layoutX="15.0" layoutY="130.0" prefHeight="25.0" prefWidth="259.0" />
+                                                        <Button fx:id="btnRelClassificacaoCategoria" focusTraversable="false" layoutX="297.0" layoutY="130.0" mnemonicParsing="false" onAction="#criarRelClassificacaoCategoria" prefWidth="25.0" />
+                                          <Label layoutX="15.0" layoutY="114.0" text="Categoria" />
+              
+                                                    </children>
+                                                </AnchorPane>
+                                            </content>
+                                        </Tab>
+                                    </tabs>
+                                </TabPane>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </TitledPane>
+            <ProgressIndicator fx:id="indicadorProgresso" layoutX="461.0" layoutY="276.0" prefHeight="75.0" prefWidth="75.0" />
+            </children>
+        </AnchorPane>
+    </children>
+</VBox>

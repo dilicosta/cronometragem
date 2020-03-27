@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Pagination?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="494.0" prefWidth="870.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+      <TitledPane animated="false" collapsible="false" layoutX="8.0" layoutY="10.0" prefHeight="430.0" prefWidth="193.0" text="filtros">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <Label layoutX="14.0" layoutY="14.0" text="Nome" />
+                  <TextField fx:id="txtNome" layoutX="14.0" layoutY="31.0" />
+                  <Label layoutX="14.0" layoutY="65.0" text="CPF" />
+                  <TextField fx:id="txtCpf" layoutX="14.0" layoutY="82.0" />
+                  <Button layoutX="50.0" layoutY="357.0" mnemonicParsing="false" onAction="#filtrar" prefWidth="100.0" text="filtrar" />
+               </children>
+            </AnchorPane>
+        </content>
+      </TitledPane>
+        <Pagination fx:id="paginacao" layoutX="210.0" layoutY="10.0" prefHeight="430.0" prefWidth="651.0" />
+        <TableView fx:id="tabAtleta" layoutX="210.0" layoutY="10.0" prefHeight="430.0" prefWidth="651.0" snapToPixel="false">
+            <columns>
+                <TableColumn fx:id="colNome" minWidth="0.0" prefWidth="300.0" text="Nome" />
+                <TableColumn fx:id="colCpf" minWidth="0.0" prefWidth="150.0" text="CPF" />
+            <TableColumn fx:id="colNascimento" text="Nascimento" />
+                <TableColumn fx:id="colSexo" prefWidth="70.0" text="Sexo" />
+                <TableColumn fx:id="colExcluir" minWidth="40.0" prefWidth="40.0" text="-" />
+            </columns>
+        </TableView>
+      <Button layoutX="385.0" layoutY="455.0" mnemonicParsing="false" onAction="#novo" prefWidth="100.0" text="novo atleta" />
+    </children>
+</AnchorPane>

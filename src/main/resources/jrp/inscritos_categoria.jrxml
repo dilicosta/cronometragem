@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.5.1.final using JasperReports Library version 6.5.1  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="classificacao_categoria" language="javascript" pageWidth="595" pageHeight="842" whenNoDataType="NoDataSection" columnWidth="567" leftMargin="14" rightMargin="14" topMargin="42" bottomMargin="42" uuid="df013db5-f76e-44d3-b0df-bcbc46d93160">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="cm"/>
+	<style name="Title" fontName="Times New Roman" fontSize="50" isBold="true"/>
+	<style name="SubTitle" forecolor="#736343" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<style name="Row" mode="Transparent">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{categoria_COUNT}%2 == 0]]></conditionExpression>
+			<style backcolor="#C4D79B"/>
+		</conditionalStyle>
+	</style>
+	<parameter name="logo" class="java.lang.String"/>
+	<parameter name="nomeProva" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="nome" class="com.taurus.racingTiming.entidade.corrida.CategoriaDaProva">
+		<fieldDescription><![CDATA[atleta.nome]]></fieldDescription>
+	</field>
+	<field name="equipe" class="java.lang.String">
+		<fieldDescription><![CDATA[equipe]]></fieldDescription>
+	</field>
+	<field name="municipio" class="java.lang.String">
+		<fieldDescription><![CDATA[enderecoAtletaInscricao.cidade]]></fieldDescription>
+	</field>
+	<field name="numero" class="java.lang.Integer">
+		<fieldDescription><![CDATA[numeroAtleta]]></fieldDescription>
+	</field>
+	<field name="nomeCategoria" class="java.lang.String">
+		<fieldDescription><![CDATA[categoria.categoriaAtleta.nome]]></fieldDescription>
+	</field>
+	<field name="digitosNumeracao" class="java.lang.Integer">
+		<fieldDescription><![CDATA[categoria.digitosNumeracao]]></fieldDescription>
+	</field>
+	<field name="dupla" class="com.taurus.racingTiming.entidade.corrida.AtletaInscricao">
+		<fieldDescription><![CDATA[dupla]]></fieldDescription>
+	</field>
+	<variable name="totalCategoria" class="java.lang.Integer" incrementType="Group" incrementGroup="categoria" calculation="Sum">
+		<variableExpression><![CDATA[1]]></variableExpression>
+		<initialValueExpression><![CDATA[0]]></initialValueExpression>
+	</variable>
+	<variable name="digitosNumero" class="java.lang.Integer" calculation="System"/>
+	<group name="categoria" isStartNewPage="true" isReprintHeaderOnEachPage="true">
+		<groupExpression><![CDATA[$F{nomeCategoria}]]></groupExpression>
+		<groupHeader>
+			<band height="43">
+				<frame>
+					<reportElement key="" mode="Opaque" x="0" y="1" width="567" height="41" printWhenGroupChanges="categoria" backcolor="#8DB84D" uuid="180f9c46-dffc-4998-a379-bd040760afd5">
+						<property name="com.jaspersoft.studio.layout"/>
+					</reportElement>
+					<textField evaluationTime="Group" evaluationGroup="categoria">
+						<reportElement stretchType="ElementGroupHeight" x="5" y="0" width="250" height="19" uuid="f8146bc5-d34d-44f9-9ae5-afe4f3bd8374">
+							<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="fc76ff73-db5e-4063-b2c0-4d78d4076c3b"/>
+						</reportElement>
+						<textElement textAlignment="Left" verticalAlignment="Middle">
+							<font size="14" pdfFontName="Times-Bold"/>
+						</textElement>
+						<textFieldExpression><![CDATA[$F{nomeCategoria} + " / " +$V{categoria_COUNT} + " inscritos"]]></textFieldExpression>
+					</textField>
+					<staticText>
+						<reportElement x="0" y="19" width="50" height="22" uuid="f6281e81-32dc-40d6-9aaa-c9c800f27e0e"/>
+						<textElement textAlignment="Center" verticalAlignment="Middle">
+							<font size="12" isBold="true" pdfFontName="Times-Bold"/>
+						</textElement>
+						<text><![CDATA[Número]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="55" y="19" width="180" height="22" uuid="d2ca5db3-eccb-4ddf-bb3f-a18b8eaee7f6"/>
+						<textElement textAlignment="Left" verticalAlignment="Middle">
+							<font size="12" isBold="true" pdfFontName="Times-Bold"/>
+						</textElement>
+						<text><![CDATA[     Atleta]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="240" y="19" width="161" height="22" uuid="b9a1da70-ed77-4d97-8b32-0f9f0674c793"/>
+						<textElement textAlignment="Left" verticalAlignment="Middle">
+							<font size="12" isBold="true" pdfFontName="Times-Bold"/>
+						</textElement>
+						<text><![CDATA[    Equipe]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="406" y="19" width="160" height="22" uuid="c07b355a-7011-478c-9690-e255a545e7bd"/>
+						<textElement textAlignment="Left" verticalAlignment="Middle">
+							<font size="12" isBold="true" pdfFontName="Times-Bold"/>
+						</textElement>
+						<text><![CDATA[    Município]]></text>
+					</staticText>
+				</frame>
+				<line>
+					<reportElement positionType="FixRelativeToBottom" x="0" y="0" width="539" height="1" uuid="e9d2002a-c8ee-4649-a258-640dad29110c"/>
+					<graphicElement>
+						<pen lineWidth="0.5" lineColor="#999999"/>
+					</graphicElement>
+				</line>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="14"/>
+		</groupFooter>
+	</group>
+	<background>
+		<band height="12" splitType="Stretch">
+			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
+		</band>
+	</background>
+	<pageHeader>
+		<band height="95" splitType="Stretch">
+			<staticText>
+				<reportElement style="SubTitle" positionType="Float" x="140" y="53" width="426" height="22" uuid="f6a78448-8260-4445-a9e0-e3fb53b080d9"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<text><![CDATA[Atletas inscritos por categoria]]></text>
+			</staticText>
+			<image hAlign="Center" onErrorType="Blank">
+				<reportElement mode="Transparent" x="1" y="0" width="139" height="53" uuid="afccb0ab-cff5-41a9-8f2f-5ba89eb0fa1b"/>
+				<graphicElement fill="Solid"/>
+				<imageExpression><![CDATA[$P{logo}]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="0" y="53" width="140" height="22" uuid="0cd3bbb2-08f5-46ca-953b-eaa39e049bbd"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="12" isBold="true" pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[Taurus' Racing Timing]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="140" y="0" width="426" height="40" uuid="0eccb8d7-0e0a-4740-97f8-7d5bba4fc61c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="29" isBold="true" pdfFontName="Times-Bold" pdfEncoding=""/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{nomeProva}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="16" splitType="Stretch">
+			<frame>
+				<reportElement key="" style="Row" positionType="Float" mode="Opaque" x="0" y="0" width="567" height="15" isPrintWhenDetailOverflows="true" uuid="fa7cec56-4ec1-48e6-a26e-7266a995d174"/>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement key="" positionType="Float" x="55" y="0" width="180" height="15" uuid="1039686d-9f9e-4942-95a4-3591d6547418">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="6340e609-df72-42e7-aa11-f6733446da32"/>
+					</reportElement>
+					<textElement verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[$F{nome} + (
+$F{dupla} == null ? "" : " /  " + $F{dupla}.getAtleta().getNome())]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement positionType="Float" x="240" y="0" width="161" height="15" uuid="becdf138-62f7-4a44-8304-f771a981db79">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="6340e609-df72-42e7-aa11-f6733446da32"/>
+					</reportElement>
+					<textElement verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[$F{equipe}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement positionType="Float" x="406" y="0" width="160" height="15" uuid="fe865fca-445b-475c-afc9-d31ff9f1bd66">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="6340e609-df72-42e7-aa11-f6733446da32"/>
+					</reportElement>
+					<textElement verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[$F{municipio}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement positionType="Float" x="0" y="0" width="50" height="15" uuid="bd90012f-6b17-496f-ab8d-272f825ea41c">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="6340e609-df72-42e7-aa11-f6733446da32"/>
+					</reportElement>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[$F{digitosNumeracao}!=null && $F{numero} !=null  ? com.taurus.util.FormatarUtil.lpad(new java.lang.Long($F{numero}),$F{digitosNumeracao}) : $F{numero}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="3" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="24" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="0" width="567" height="24" forecolor="#D0B48E" backcolor="#F0F0F0" uuid="5d8169bd-4a75-48c8-8a68-6d3ad5ba9402"/>
+				<textField>
+					<reportElement style="Column header" x="426" y="0" width="116" height="24" forecolor="#736343" uuid="18cfe1ca-f7d6-48b0-9827-28578b42a5e0"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Página "+$V{PAGE_NUMBER}+" de " + $V{PAGE_COUNT}]]></textFieldExpression>
+				</textField>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement style="Column header" x="194" y="0" width="232" height="24" forecolor="#736343" uuid="fbce24bb-3cb1-44a3-8eec-8c067ddbe5b5"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="12" y="0" width="182" height="24" forecolor="#928469" uuid="eeafda55-34c7-4941-bb0c-39fb55b721da"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle"/>
+					<text><![CDATA[Cronometragem: Taurus' Racing Timing]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="27" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="1" y="0" width="567" height="25" backcolor="#8DB84D" uuid="885adc01-d0e7-4a94-8707-c1bf93c07959"/>
+				<staticText>
+					<reportElement x="22" y="0" width="100" height="25" uuid="746ffce2-9183-456f-a257-69a9953e2a21"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="14" isBold="true" pdfFontName="Times-Bold"/>
+					</textElement>
+					<text><![CDATA[Totais]]></text>
+				</staticText>
+				<textField evaluationTime="Report">
+					<reportElement x="124" y="0" width="100" height="25" uuid="a8477e75-316d-4629-b97b-91430ecd8dfa"/>
+					<textElement verticalAlignment="Middle">
+						<font size="13" isBold="false" pdfFontName="Times-Bold"/>
+					</textElement>
+					<textFieldExpression><![CDATA["categorias: " + $V{totalCategoria}]]></textFieldExpression>
+				</textField>
+				<textField evaluationTime="Report">
+					<reportElement x="240" y="0" width="100" height="25" uuid="efb72e25-af16-4c37-888e-3b0218a872df"/>
+					<textElement verticalAlignment="Middle">
+						<font size="13" isBold="false" pdfFontName="Times-Bold"/>
+					</textElement>
+					<textFieldExpression><![CDATA["atletas: " + $V{REPORT_COUNT}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</summary>
+</jasperReport>

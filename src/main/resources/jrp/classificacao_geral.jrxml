@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.5.1.final using JasperReports Library version 6.5.1  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="classificacao_categoria" pageWidth="842" pageHeight="595" orientation="Landscape" whenNoDataType="NoPages" columnWidth="814" leftMargin="14" rightMargin="14" topMargin="20" bottomMargin="20" uuid="df013db5-f76e-44d3-b0df-bcbc46d93160">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<property name="com.jaspersoft.studio.unit." value="cm"/>
+	<style name="Title" fontName="Times New Roman" fontSize="50" isBold="true"/>
+	<style name="SubTitle" forecolor="#736343" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<style name="Row" mode="Transparent">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{status_COUNT}%2 == 0]]></conditionExpression>
+			<style backcolor="#E6D6B3"/>
+		</conditionalStyle>
+	</style>
+	<parameter name="percurso" class="java.lang.String"/>
+	<parameter name="logo" class="java.lang.String"/>
+	<parameter name="nomeProva" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="nome" class="java.lang.String">
+		<fieldDescription><![CDATA[atleta.nome]]></fieldDescription>
+	</field>
+	<field name="posCat" class="java.lang.Integer">
+		<fieldDescription><![CDATA[posicaoCategoria]]></fieldDescription>
+	</field>
+	<field name="posGeral" class="java.lang.Integer">
+		<fieldDescription><![CDATA[posicaoGeral]]></fieldDescription>
+	</field>
+	<field name="equipe" class="java.lang.String">
+		<fieldDescription><![CDATA[equipe]]></fieldDescription>
+	</field>
+	<field name="municipio" class="java.lang.String">
+		<fieldDescription><![CDATA[enderecoAtletaInscricao.cidade]]></fieldDescription>
+	</field>
+	<field name="diferencaCategoria" class="java.lang.String">
+		<fieldDescription><![CDATA[tempoFormatadoDiferencaCategoria]]></fieldDescription>
+	</field>
+	<field name="tempo" class="java.lang.String">
+		<fieldDescription><![CDATA[tempoFormatado]]></fieldDescription>
+	</field>
+	<field name="diferencaGeral" class="java.lang.String">
+		<fieldDescription><![CDATA[tempoFormatadoDiferencaGeral]]></fieldDescription>
+	</field>
+	<field name="numero" class="java.lang.Integer">
+		<fieldDescription><![CDATA[numeroAtleta]]></fieldDescription>
+	</field>
+	<field name="categoria" class="java.lang.String">
+		<fieldDescription><![CDATA[categoria.categoriaAtleta.nome]]></fieldDescription>
+	</field>
+	<field name="digitosNumeracao" class="java.lang.Integer">
+		<fieldDescription><![CDATA[categoria.digitosNumeracao]]></fieldDescription>
+	</field>
+	<field name="statusCorrida" class="com.taurus.racingTiming.util.ListaConstantes.StatusAtletaCorrida">
+		<fieldDescription><![CDATA[statusCorrida]]></fieldDescription>
+	</field>
+	<group name="status" isReprintHeaderOnEachPage="true">
+		<groupExpression><![CDATA[$F{statusCorrida}]]></groupExpression>
+		<groupHeader>
+			<band height="48">
+				<textField>
+					<reportElement x="5" y="1" width="384" height="18" uuid="c8145a2d-fdbc-4b69-ae99-eebac9e65666"/>
+					<textElement verticalAlignment="Bottom">
+						<font fontName="Times New Roman" size="14" isBold="true" pdfFontName="Times-Roman"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{percurso} + " / " + ($F{statusCorrida} == com.taurus.racingTiming.util.ListaConstantes.StatusAtletaCorrida.COMPLETOU ? "Classificados" : $F{statusCorrida}.getDescricao())]]></textFieldExpression>
+				</textField>
+				<frame>
+					<reportElement mode="Opaque" x="0" y="25" width="814" height="22" backcolor="#DEBB71" uuid="fd40d152-f31e-4588-b7da-f9b88acfe9bb"/>
+					<staticText>
+						<reportElement x="0" y="0" width="40" height="20" uuid="e1b276ba-6494-4b19-8839-cd3d241ae723"/>
+						<textElement textAlignment="Center" verticalAlignment="Middle">
+							<font size="12" isBold="true" pdfFontName="Times-Roman"/>
+						</textElement>
+						<text><![CDATA[Pos. Geral]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="45" y="0" width="40" height="20" uuid="f6281e81-32dc-40d6-9aaa-c9c800f27e0e"/>
+						<textElement textAlignment="Center" verticalAlignment="Middle">
+							<font size="12" isBold="true" pdfFontName="Times-Roman"/>
+						</textElement>
+						<text><![CDATA[Núm.]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="90" y="0" width="187" height="20" uuid="d2ca5db3-eccb-4ddf-bb3f-a18b8eaee7f6"/>
+						<textElement textAlignment="Left" verticalAlignment="Middle">
+							<font size="12" isBold="true" pdfFontName="Times-Roman"/>
+						</textElement>
+						<text><![CDATA[    Atleta]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="282" y="0" width="100" height="20" uuid="ff9c6bad-47ce-4007-80a4-ad76823bbb14"/>
+						<textElement textAlignment="Left" verticalAlignment="Middle">
+							<font size="12" isBold="true" pdfFontName="Times-Roman"/>
+						</textElement>
+						<text><![CDATA[    Categoria]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="387" y="0" width="150" height="20" uuid="b9a1da70-ed77-4d97-8b32-0f9f0674c793"/>
+						<textElement textAlignment="Left" verticalAlignment="Middle">
+							<font size="12" isBold="true" pdfFontName="Times-Roman"/>
+						</textElement>
+						<text><![CDATA[    Equipe]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="542" y="0" width="140" height="20" uuid="c07b355a-7011-478c-9690-e255a545e7bd"/>
+						<textElement textAlignment="Left" verticalAlignment="Middle">
+							<font size="12" isBold="true" pdfFontName="Times-Roman"/>
+						</textElement>
+						<text><![CDATA[    Município]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="687" y="0" width="60" height="20" uuid="edfacdcf-1e97-4e67-b186-d67b6c09d897"/>
+						<textElement textAlignment="Center" verticalAlignment="Middle">
+							<font size="12" isBold="true" pdfFontName="Times-Roman"/>
+						</textElement>
+						<text><![CDATA[Tempo]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="752" y="0" width="60" height="20" uuid="0b855b06-922c-44fc-8cec-b34b1fce8c19"/>
+						<textElement textAlignment="Center" verticalAlignment="Middle">
+							<font size="12" isBold="true" pdfFontName="Times-Roman"/>
+						</textElement>
+						<text><![CDATA[Dif. Geral]]></text>
+					</staticText>
+				</frame>
+				<line>
+					<reportElement positionType="FixRelativeToBottom" x="0" y="0" width="814" height="1" uuid="e9d2002a-c8ee-4649-a258-640dad29110c"/>
+					<graphicElement>
+						<pen lineWidth="0.5" lineColor="#999999"/>
+					</graphicElement>
+				</line>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="15"/>
+		</groupFooter>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="95" splitType="Stretch">
+			<image hAlign="Center" onErrorType="Blank">
+				<reportElement mode="Transparent" x="1" y="0" width="139" height="53" uuid="92e2f68a-1cca-47cf-b72a-64e3765597a9"/>
+				<graphicElement fill="Solid"/>
+				<imageExpression><![CDATA[$P{logo}]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="0" y="53" width="140" height="22" uuid="0e993e0c-df17-4bac-aac1-df9fc3b20677"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="12" isBold="true" pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[Taurus' Racing Timing]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="140" y="0" width="674" height="40" uuid="0333303b-d2ed-49ad-8eb7-58c0d47aeb95"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="29" isBold="true" pdfFontName="Times-Bold" pdfEncoding=""/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{nomeProva}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="SubTitle" x="140" y="53" width="674" height="22" uuid="720601e9-ce76-4a3a-87ad-adc9f137796b"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<text><![CDATA[Classificação Geral]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="15" splitType="Stretch">
+			<frame>
+				<reportElement style="Row" positionType="Float" mode="Opaque" x="0" y="0" width="814" height="15" uuid="fa7cec56-4ec1-48e6-a26e-7266a995d174"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement x="90" y="0" width="187" height="16" uuid="1039686d-9f9e-4942-95a4-3591d6547418">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="6340e609-df72-42e7-aa11-f6733446da32"/>
+					</reportElement>
+					<textElement verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[$F{nome}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement positionType="Float" x="387" y="0" width="150" height="16" uuid="becdf138-62f7-4a44-8304-f771a981db79">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="6340e609-df72-42e7-aa11-f6733446da32"/>
+					</reportElement>
+					<textElement verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[$F{equipe}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="542" y="0" width="140" height="16" uuid="fe865fca-445b-475c-afc9-d31ff9f1bd66">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="6340e609-df72-42e7-aa11-f6733446da32"/>
+					</reportElement>
+					<textElement verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[$F{municipio}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="687" y="0" width="60" height="16" uuid="42e672d5-ce1d-41a5-b171-90605ddb6d8a">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="6340e609-df72-42e7-aa11-f6733446da32"/>
+					</reportElement>
+					<box>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[$F{tempo}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="752" y="0" width="60" height="16" uuid="79ce2818-1e8b-4c0c-a99e-6f557d6a4e85">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="6340e609-df72-42e7-aa11-f6733446da32"/>
+					</reportElement>
+					<box>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[$F{diferencaGeral}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="0" y="0" width="40" height="16" uuid="8c63868d-a1b2-4f0c-9917-6b1fa2fe221f">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="6340e609-df72-42e7-aa11-f6733446da32"/>
+					</reportElement>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[$F{posGeral}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="45" y="0" width="40" height="16" uuid="bd90012f-6b17-496f-ab8d-272f825ea41c">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="6340e609-df72-42e7-aa11-f6733446da32"/>
+					</reportElement>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[$F{digitosNumeracao}!=null && $F{numero} !=null  ? com.taurus.util.FormatarUtil.lpad(new java.lang.Long($F{numero}),$F{digitosNumeracao}) : $F{numero}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="282" y="0" width="100" height="16" uuid="f0caf831-2930-4796-a4e0-e8b358199df6">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="6340e609-df72-42e7-aa11-f6733446da32"/>
+					</reportElement>
+					<textElement verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[$F{categoria}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="25" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="1" width="814" height="24" forecolor="#D0B48E" backcolor="#F0F0F0" uuid="5d8169bd-4a75-48c8-8a68-6d3ad5ba9402"/>
+				<textField>
+					<reportElement style="Column header" x="680" y="0" width="128" height="24" forecolor="#736343" uuid="f5aae876-fc87-4353-be07-a5ed50672acd"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Página "+$V{PAGE_NUMBER}+" de " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement style="Column header" x="194" y="0" width="486" height="24" forecolor="#736343" uuid="7f64db70-cdfb-4153-83cf-87ee94866dd2"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="12" y="0" width="182" height="24" forecolor="#928469" uuid="05e17b59-12df-4912-9645-e11105eda1b6"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle"/>
+					<text><![CDATA[Cronometragem: Taurus' Racing Timing]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

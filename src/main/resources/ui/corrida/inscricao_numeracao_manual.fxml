@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Pagination?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="655.0" prefWidth="776.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="25.0" layoutY="20.0" text="Prova" />
+      <TextField fx:id="txtNomeProva" editable="false" focusTraversable="false" layoutX="25.0" layoutY="37.0" prefHeight="25.0" prefWidth="289.0" />
+      <Label layoutX="354.0" layoutY="20.0" text="Data" />
+      <TextField fx:id="txtDataProva" editable="false" focusTraversable="false" layoutX="354.0" layoutY="37.0" prefHeight="25.0" prefWidth="80.0" />
+      <Label layoutX="471.0" layoutY="20.0" text="Situação" />
+      <TextField fx:id="txtSituacaoProva" editable="false" focusTraversable="false" layoutX="471.0" layoutY="37.0" prefHeight="25.0" prefWidth="280.0" />
+      <Label layoutX="25.0" layoutY="72.0" text="Categoria" />
+      <TextField fx:id="txtCategoria" editable="false" focusTraversable="false" layoutX="25.0" layoutY="89.0" prefHeight="25.0" prefWidth="210.0" />
+      <Label layoutX="259.0" layoutY="72.0" text="Inscritos" />
+      <TextField fx:id="txtInscritos" editable="false" focusTraversable="false" layoutX="259.0" layoutY="89.0" prefHeight="25.0" prefWidth="72.0" />
+      <Label layoutX="356.0" layoutY="72.0" text="Númeração automática" />
+      <TextField fx:id="txtNumAutomatica" editable="false" focusTraversable="false" layoutX="356.0" layoutY="89.0" prefHeight="25.0" prefWidth="149.0" />
+      <Label layoutX="541.0" layoutY="72.0" text="Dígitos" />
+      <TextField fx:id="txtDigito" editable="false" focusTraversable="false" layoutX="541.0" layoutY="89.0" prefHeight="25.0" prefWidth="45.0" />
+      <Label layoutX="615.0" layoutY="72.0" text="Início" />
+      <TextField fx:id="txtInicioNumeracao" editable="false" focusTraversable="false" layoutX="615.0" layoutY="89.0" prefHeight="25.0" prefWidth="60.0" />
+      <Label layoutX="691.0" layoutY="72.0" text="Fim" />
+      <TextField fx:id="txtFimNumeracao" editable="false" focusTraversable="false" layoutX="691.0" layoutY="89.0" prefHeight="25.0" prefWidth="60.0" />
+      <Pagination fx:id="paginacao" layoutX="26.0" layoutY="132.0" prefHeight="509.0" prefWidth="726.0" />
+      <TableView fx:id="tabInscricao" editable="true" focusTraversable="false" layoutX="26.0" layoutY="132.0" prefHeight="509.0" prefWidth="726.0">
+         <columns>
+            <TableColumn fx:id="colNumero" prefWidth="70.0" text="Número" />
+            <TableColumn fx:id="colNome" prefWidth="230.0" text="Nome" />
+            <TableColumn fx:id="colCategoria" prefWidth="205.0" text="Categoria" />
+            <TableColumn fx:id="colEquipe" prefWidth="206.0" text="Equipe" />
+         </columns>
+      </TableView>
+   </children>
+</AnchorPane>

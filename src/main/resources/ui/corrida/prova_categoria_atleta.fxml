@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Pagination?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="646.0" prefWidth="630.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TitledPane animated="false" collapsible="false" focusTraversable="false" layoutX="15.0" layoutY="15.0" prefHeight="103.0" prefWidth="600.0" text="Prova">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <Label layoutX="15.0" layoutY="15.0" text="Nome" />
+                  <TextField fx:id="txtNome" editable="false" focusTraversable="false" layoutX="15.0" layoutY="32.0" prefHeight="25.0" prefWidth="235.0" />
+                  <Label layoutX="255.0" layoutY="15.0" text="Data" />
+                  <TextField fx:id="txtData" editable="false" focusTraversable="false" layoutX="255.0" layoutY="32.0" prefHeight="25.0" prefWidth="80.0" />
+                  <Label layoutX="340.0" layoutY="14.0" text="Situação" />
+                  <TextField fx:id="txtSituacao" editable="false" focusTraversable="false" layoutX="340.0" layoutY="31.0" prefHeight="25.0" prefWidth="150.0" />
+                  <Label layoutX="495.0" layoutY="14.0" text="Total inscritos" />
+                  <TextField fx:id="txtTotalInscritos" editable="false" focusTraversable="false" layoutX="495.0" layoutY="31.0" prefHeight="25.0" prefWidth="80.0" />
+               </children>
+            </AnchorPane>
+        </content>
+      </TitledPane>
+      <TitledPane animated="false" collapsible="false" focusTraversable="false" layoutX="16.0" layoutY="136.0" prefHeight="498.0" prefWidth="600.0" text="Categoria do Atleta">
+         <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="263.0" prefWidth="598.0">
+               <children>
+                  <Pagination fx:id="paginacao" layoutX="15.0" layoutY="15.0" prefHeight="444.0" prefWidth="570.0" />
+                  <TableView fx:id="tabInscricao" focusTraversable="false" layoutX="15.0" layoutY="15.0" prefHeight="444.0" prefWidth="570.0">
+                     <columns>
+                        <TableColumn fx:id="colCategoria" prefWidth="235.0" text="Categoria">
+                           <columns>
+                              <TableColumn fx:id="colNumero" prefWidth="70.0" text="Número" />
+                              <TableColumn fx:id="colNome" prefWidth="235.0" text="Nome" />
+                              <TableColumn fx:id="colEquipe" prefWidth="250.0" text="Equipe" />
+                           </columns>
+                        </TableColumn>
+                     </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+         </content>
+      </TitledPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,120 @@
+.button-cronometro{
+    -fx-background-color: transparent;
+    -fx-cursor: hand;
+    -fx-background-image: url("../icone/chronometer-icon.png");
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+}
+
+.button-remove-cronometro{
+    -fx-background-color: transparent;
+    -fx-cursor: hand;
+    -fx-background-image: url("../icone/remove-chronometer-icon.png");
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+}
+
+.button-classificacao{
+    -fx-background-color: transparent;
+    -fx-cursor: hand;
+    -fx-background-image: url("../icone/trophy-icon.png");
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+}
+
+.button-desclassificacao{
+    -fx-background-color: transparent;
+    -fx-cursor: hand;
+    -fx-background-image: url("../icone/forbidden-icon.png");
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+}
+
+.button-pesquisar-computador{
+    -fx-background-color: transparent;
+    -fx-cursor: hand;
+    -fx-background-image: url("../icone/computer-search-icon.png");
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+}
+
+.button-bandeira-chegada{
+    -fx-background-color: transparent;
+    -fx-cursor: hand;
+    -fx-background-image: url("../icone/checkered-flag-icon.png");
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+}
+
+.button-nao-bandeira-chegada{
+    -fx-background-color: transparent;
+    -fx-cursor: hand;
+    -fx-background-image: url("../icone/no-checkered-flag-icon.png");
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+}
+
+.button-nao-bandeira-chegada-verde{
+    -fx-background-color: transparent;
+    -fx-cursor: hand;
+    -fx-background-image: url("../icone/no-checkered-flag-green-icon.png");
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+}
+
+.button-controle-on{
+    -fx-background-color: transparent;
+    -fx-cursor: hand;
+    -fx-background-image: url("../icone/Power-Button-Green-icon.png");
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+}
+
+.button-controle-off{
+    -fx-background-color: transparent;
+    -fx-cursor: hand;
+    -fx-background-image: url("../icone/Power-Button-Red-icon.png");
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+}
+
+.button-controle-rec{
+    -fx-background-color: transparent;
+    -fx-cursor: hand;
+    -fx-background-image: url("../icone/record-icon.png");
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+}
+
+.button-controle-play{
+    -fx-background-color: transparent;
+    -fx-cursor: hand;
+    -fx-background-image: url("../icone/play-icon.png");
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+}
+
+.button-controle-pause{
+    -fx-background-color: transparent;
+    -fx-cursor: hand;
+    -fx-background-image: url("../icone/pause-icon.png");
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+}
+
+.button-controle-stop{
+    -fx-background-color: transparent;
+    -fx-cursor: hand;
+    -fx-background-image: url("../icone/stop-icon.png");
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+}
+
+.button-relatorio{
+    -fx-background-color: transparent;
+    -fx-cursor: hand;
+    -fx-background-image: url("../icone/report-icon.png");
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+}
+

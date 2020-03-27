@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence.xsd"
+             version="1.0">
+
+    <persistence-unit name="PU" transaction-type="RESOURCE_LOCAL">
+        <provider>org.hibernate.ejb.HibernatePersistence</provider>
+        <non-jta-data-source>java:jdbc/taurus-DS</non-jta-data-source>
+        <properties>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect" />
+            <property name="hibernate.default_batch_fetch_size" value="8"/>
+            <propertye name="org.hibernate.callable" value="true"/>
+            <property name="transaction.factory_class" value="org.hibernate.transaction.JDBCTransactionFactory" />
+            
+            <!-- necessario nas versoes hibernate 5 e acima para compatibilidade na criacao de ID auto increment -->
+            <property name="hibernate.id.new_generator_mappings" value="false"/>
+        </properties>
+    </persistence-unit>
+</persistence>

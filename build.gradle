@@ -1,0 +1,82 @@
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'application'
+
+sourceCompatibility = '1.8'
+[compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
+
+// Necessario para que o Gradle coloque os resources na mesma pasta das classes
+// quando faz o build e copia os arquivos para a pasta correspondente.
+// Desta forma o Hibernate localiza as Entidades anotadas
+// Outra solucao seria declarar dentro do persistence.xml todas as entidades
+sourceSets.main.output.resourcesDir = sourceSets.main.output.classesDir
+
+mainClassName = 'com.taurus.racingTiming.TaurusRacingTimingApplication'
+
+repositories {
+    mavenCentral()
+    maven {
+        url "http://www.dcm4che.org/maven2/"
+    }
+}
+
+dependencies {
+    // incluir jar local
+    compile fileTree(dir: 'local-lib', include: '*.jar')
+	
+    compile(
+        // https://mvnrepository.com/artifact/com.github.sarxos/webcam-capture
+        [group: 'com.github.sarxos', name: 'webcam-capture', version: '0.3.12'],
+        // https://mvnrepository.com/artifact/org.slf4j/slf4j-log4j12
+        [group: 'org.slf4j', name: 'slf4j-log4j12', version: '1.7.25'],
+
+        // https://mvnrepository.com/artifact/xuggle/xuggle-xuggler
+        [group: 'xuggle', name: 'xuggle-xuggler', version: '5.4'],
+
+        
+        // https://mvnrepository.com/artifact/net.sf.jasperreports/jasperreports
+        [group: 'net.sf.jasperreports', name: 'jasperreports', version: '6.5.1'],
+        // https://mvnrepository.com/artifact/com.lowagie/itext
+        [group: 'com.lowagie', name: 'itext', version: '2.1.7'],
+        // https://mvnrepository.com/artifact/org.olap4j/olap4j
+        [group: 'org.olap4j', name: 'olap4j', version: '1.2.0'],
+        // https://mvnrepository.com/artifact/org.mozilla/rhino
+        [group: 'org.mozilla', name: 'rhino', version: '1.7.10'],
+         
+        // https://mvnrepository.com/artifact/org.apache.poi/poi
+        [group: 'org.apache.poi', name: 'poi', version: '3.17'],
+        // https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml
+        [group: 'org.apache.poi', name: 'poi-ooxml', version: '3.17'],
+
+        // https://mvnrepository.com/artifact/com.itextpdf/itextpdf
+        [group: 'com.itextpdf', name: 'itextpdf', version: '5.5.13'],
+        
+        // https://mvnrepository.com/artifact/commons-io/commons-io
+        [group: 'commons-io', name: 'commons-io', version: '2.6'],
+        // https://mvnrepository.com/artifact/commons-validator/commons-validator
+        [group: 'commons-validator', name: 'commons-validator', version: '1.6'],
+
+        // https://mvnrepository.com/artifact/log4j/log4j
+        [group: 'log4j', name: 'log4j', version: '1.2.17'],
+               
+        // https://mvnrepository.com/artifact/org.mariadb.jdbc/mariadb-java-client
+        [group: 'org.mariadb.jdbc', name: 'mariadb-java-client', version: '2.2.3'],
+
+        // https://mvnrepository.com/artifact/org.springframework/spring-core
+        [group: 'org.springframework', name: 'spring-core', version: '5.0.2.RELEASE'],
+        // https://mvnrepository.com/artifact/org.springframework/spring-context
+        [group: 'org.springframework', name: 'spring-context', version: '5.0.2.RELEASE'],
+        // https://mvnrepository.com/artifact/org.springframework/spring-jdbc
+        [group: 'org.springframework', name: 'spring-jdbc', version: '5.0.2.RELEASE'],
+        // https://mvnrepository.com/artifact/org.springframework/spring-orm
+        [group: 'org.springframework', name: 'spring-orm', version: '5.0.2.RELEASE'],
+        // https://mvnrepository.com/artifact/org.springframework/spring-tx
+        [group: 'org.springframework', name: 'spring-tx', version: '5.0.2.RELEASE'],
+        
+        // https://mvnrepository.com/artifact/org.hibernate/hibernate-core
+        [group: 'org.hibernate', name: 'hibernate-core', version: '5.2.12.Final'],
+        // https://mvnrepository.com/artifact/org.hibernate.javax.persistence/hibernate-jpa-2.1-api
+        [group: 'org.hibernate.javax.persistence', name: 'hibernate-jpa-2.1-api', version: '1.0.0.Final']
+    )
+
+}

@@ -1,0 +1,5 @@
+height
+cabecalho tableView:25
+linha sem botão: 24
+
+largura da barra de rolagem vertical do tableview: 15

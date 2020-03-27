@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Pagination?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="583.0" prefWidth="1331.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="349.0" layoutY="30.0" text="Prova" />
+      <TextField fx:id="txtNomeProva" editable="false" focusTraversable="false" layoutX="349.0" layoutY="46.0" prefHeight="25.0" prefWidth="290.0" />
+      <Label layoutX="654.0" layoutY="30.0" text="Situação" />
+      <TextField fx:id="txtSituacao" editable="false" focusTraversable="false" layoutX="655.0" layoutY="46.0" prefHeight="25.0" prefWidth="254.0" />
+      <TitledPane animated="false" collapsible="false" focusTraversable="false" layoutX="16.0" layoutY="84.0" prefHeight="153.0" prefWidth="314.0" text="Atleta">
+         <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="159.0" prefWidth="433.0">
+               <children>
+                  <Label layoutX="15.0" layoutY="15.0" text="Nome" />
+                  <TextField fx:id="txtNomeAtleta" layoutX="15.0" layoutY="35.0" prefHeight="25.0" prefWidth="257.0" />
+                  <Label layoutX="16.0" layoutY="67.0" text="Número" />
+                  <TextField fx:id="txtNumeroAtleta" layoutX="15.0" layoutY="87.0" prefHeight="25.0" prefWidth="84.0" />
+                  <Button fx:id="btnPesquisarAtleta" focusTraversable="false" layoutX="272.0" layoutY="87.0" mnemonicParsing="false" onAction="#filtrarAtleta" prefWidth="25.0" />
+               </children>
+            </AnchorPane>
+         </content>
+      </TitledPane>
+      <TitledPane animated="false" collapsible="false" focusTraversable="false" layoutX="16.0" layoutY="254.0" prefHeight="153.0" prefWidth="314.0" text="Atleta">
+         <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="159.0" prefWidth="433.0">
+               <children>
+                  <Label layoutX="15.0" layoutY="15.0" text="Situação" />
+                  <ComboBox fx:id="comboSituacao" layoutX="14.0" layoutY="32.0" prefHeight="25.0" prefWidth="226.0" />
+                  <Label layoutX="16.0" layoutY="67.0" text="Categoria" />
+                  <ComboBox fx:id="comboCategoria" layoutX="14.0" layoutY="87.0" prefHeight="25.0" prefWidth="226.0" />
+                  <Button fx:id="btnPesquisarSituacaoCategoria" focusTraversable="false" layoutX="272.0" layoutY="87.0" mnemonicParsing="false" onAction="#filtrarSituacaoCategoria" prefWidth="25.0" />
+               </children>
+            </AnchorPane>
+         </content>
+      </TitledPane>
+      <Pagination fx:id="paginacao" layoutX="350.0" layoutY="84.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="483.0" prefWidth="960.0" />
+      <TableView fx:id="tabAtleta" focusTraversable="false" layoutX="350.0" layoutY="84.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="464.0" prefWidth="960.0">
+        <columns>
+          <TableColumn fx:id="colNumero" prefWidth="75.0" text="Número" />
+          <TableColumn fx:id="colAtleta" prefWidth="190.0" text="Atleta" />
+            <TableColumn fx:id="colCategoria" prefWidth="190.0" text="Categoria" />
+            <TableColumn fx:id="colEquipe" prefWidth="185.0" text="Equipe" />
+            <TableColumn fx:id="colTempo" prefWidth="90.0" text="Tempo" />
+            <TableColumn fx:id="colDifCat" prefWidth="90.0" text="Dif. Categoria" />
+            <TableColumn fx:id="colDifGeral" prefWidth="90.0" text="Dif. Geral" />
+            <TableColumn fx:id="colOperacao" prefWidth="40.0" text="*" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

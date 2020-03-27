@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="585.0" prefWidth="619.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+      <TitledPane animated="false" collapsible="false" focusTraversable="false" layoutX="15.0" layoutY="15.0" prefHeight="279.0" prefWidth="589.0" text="Categorias">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="201.0" prefWidth="587.0">
+               <children>
+                  <Label layoutX="15.0" layoutY="14.0" text="Categoria *" />
+                  <ComboBox fx:id="comboCategoria" layoutX="15.0" layoutY="31.0" prefHeight="25.0" prefWidth="200.0" />
+                  <Button fx:id="btnNovoCategoriaAtleta" layoutX="185.0" layoutY="6.0" mnemonicParsing="false" onAction="#abrirNovoCategoriaAtleta" prefWidth="30.0" />
+                  <Label fx:id="ComboOrganizacaoProva" layoutX="232.0" layoutY="14.0" text="Percurso *" />
+                  <ComboBox fx:id="comboPercurso" layoutX="232.0" layoutY="31.0" prefHeight="25.0" prefWidth="171.0" />
+                  <Label fx:id="comboRepresentanteOrganizacao" layoutX="420.0" layoutY="14.0" text="Largada *" />
+                  <ComboBox fx:id="comboLargada" layoutX="420.0" layoutY="31.0" prefHeight="25.0" prefWidth="152.0" />
+                  <Label layoutX="15.0" layoutY="62.0" text="Numeração automática *" />
+                  <ComboBox fx:id="comboNumeracaoAutomatica" layoutX="15.0" layoutY="79.0" prefHeight="25.0" prefWidth="200.0" />
+                  <Label fx:id="lblDigitoNumeracao" layoutX="232.0" layoutY="62.0" prefHeight="17.0" prefWidth="45.0" text="Digitos" />
+                  <TextField fx:id="txtDigitoNumeracao" layoutX="232.0" layoutY="79.0" prefHeight="25.0" prefWidth="43.0" />
+                  <Label fx:id="lblInicioNumeracao" layoutX="309.0" layoutY="62.0" prefHeight="17.0" prefWidth="45.0" text="De" />
+                  <TextField fx:id="txtInicioNumeracao" layoutX="309.0" layoutY="79.0" prefHeight="25.0" prefWidth="43.0">
+                     <padding>
+                        <Insets left="1.0" />
+                     </padding>
+                  </TextField>
+                  <Label fx:id="lblFimNumeracao" layoutX="360.0" layoutY="62.0" prefHeight="17.0" prefWidth="45.0" text="Até" />
+                  <TextField fx:id="txtFimNumeracao" layoutX="360.0" layoutY="79.0" prefHeight="25.0" prefWidth="43.0">
+                     <padding>
+                        <Insets left="1.0" />
+                     </padding>
+                  </TextField>
+                  <Button fx:id="btnCancelarEditarCategoria" layoutX="437.0" layoutY="79.0" mnemonicParsing="false" onAction="#cancelarEditarCategoria" prefWidth="30.0" />
+                  <Button fx:id="btnAddCategoria" layoutX="471.0" layoutY="79.0" mnemonicParsing="false" onAction="#adicionarCategoria" prefWidth="100.0" text="adicionar" />
+                  <TableView fx:id="tabCategoria" layoutX="15.0" layoutY="113.0" prefHeight="121.0" prefWidth="557.0">
+                    <columns>
+                      <TableColumn fx:id="colCategoria" prefWidth="235.0" text="Categoria" />
+                      <TableColumn fx:id="colPercurso" minWidth="0.0" prefWidth="150.0" text="Percurso" />
+                        <TableColumn fx:id="colLargada" prefWidth="117.0" text="Largada" />
+                        <TableColumn fx:id="colExcluirCategoria" prefWidth="40.0" text="-" />
+                    </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+        </content>
+      </TitledPane>
+      <TitledPane animated="false" collapsible="false" focusTraversable="false" layoutX="15.0" layoutY="312.0" prefHeight="195.0" prefWidth="589.0" text="Representantes das Federações">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <Label layoutX="15.0" layoutY="14.0" text="Federação *" />
+                  <ComboBox fx:id="comboFederacao" layoutX="15.0" layoutY="31.0" prefHeight="25.0" prefWidth="200.0" />
+                  <Label layoutX="237.0" layoutY="14.0" text="Representante *" />
+                  <ComboBox fx:id="comboRepresentanteFederacao" layoutX="237.0" layoutY="31.0" prefHeight="25.0" prefWidth="200.0" />
+                  <Button layoutX="471.0" layoutY="31.0" mnemonicParsing="false" onAction="#adicionarRepresentanteFederacao" prefWidth="100.0" text="adicionar" />
+                  <TableView fx:id="tabFederacao" layoutX="15.0" layoutY="65.0" prefHeight="92.0" prefWidth="557.0">
+                     <columns>
+                        <TableColumn fx:id="colFederacao" prefWidth="252.0" text="Federação" />
+                        <TableColumn fx:id="colRepresentanteFederacao" minWidth="0.0" prefWidth="250.0" text="Representante" />
+                        <TableColumn fx:id="colExcluirRepresentanteFederacao" prefWidth="40.0" text="-" />
+                     </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+        </content>
+      </TitledPane>
+      <Button layoutX="15.0" layoutY="538.0" mnemonicParsing="false" onAction="#voltar" prefHeight="25.0" prefWidth="100.0" text="&lt;&lt; anterior" />
+
+        <Button layoutX="504.0" layoutY="538.0" mnemonicParsing="false" onAction="#concluir" prefHeight="25.0" prefWidth="100.0" text="concluir" />
+
+    </children>
+</AnchorPane>
